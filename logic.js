@@ -9,15 +9,21 @@ function FunctionofAdd() {
     }
 
     const li = document.createElement("li");
-    li.textContent = task;
+    li.className = "task";
 
-    const icon = document.createElement("i");
-    icon.className = "fas fa-trash-alt";
-    icon.addEventListener("click", function() {
+    const taskText = document.createElement("span");
+    taskText.className = "task-text";
+    taskText.textContent = task;
+
+    const deleteIcon = document.createElement("i");
+    deleteIcon.className = "fas fa-trash-alt delete-icon";
+    deleteIcon.addEventListener("click", function () {
         li.remove();
     });
 
-    li.appendChild(icon);
+    li.appendChild(taskText);
+    li.appendChild(deleteIcon);
+
     todoList.appendChild(li);
 
     inputbox.value = "";
