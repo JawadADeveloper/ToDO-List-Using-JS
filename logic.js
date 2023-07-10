@@ -3,7 +3,7 @@ const todoList = document.getElementById("todolist");
 
 function FunctionofAdd() {
     const task = inputbox.value.trim();
-    if (task === '') {
+    if (task === "") {
         alert("You must add a task");
         return;
     }
@@ -28,3 +28,10 @@ function FunctionofAdd() {
 
     inputbox.value = "";
 }
+
+inputbox.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+
+        FunctionofAdd();
+    }
+});
